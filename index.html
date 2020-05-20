@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <p>这是个测试h5</p>
+    </header>
+    <div>
+        <input type="button" value="点击发送消息" onclick="sendMsg()"></input>
+    </div>
+</body>
+<script>
+    function sendMsg() {
+        system.postMessage ('发了啥')
+    }
+    system.onmessage = function(data) {
+        alert('message received: ' + data)
+    }
+</script>
+</html>
