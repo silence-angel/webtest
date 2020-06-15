@@ -18,6 +18,7 @@
         system.postMessage ('发了啥')
     }
     system.onmessage = function(data) {
+        alert(system.onmessage)
         alert('message received: ' + data)
     }
 </script>
