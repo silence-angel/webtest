@@ -10,17 +10,12 @@
         <p>这是个测试h5</p>
     </header>
     <div>
-        <input type="button" value="点击发送消息" onclick="sendMsg()"></input>
+        <input type="button" value="点击拉起应用" onclick="openApp()"></input>
     </div>
 </body>
 <script>
-    alert(111)
-    alert(JSON.stringify(system))
-    function sendMsg() {
-        system.postMessage ('发了啥')
-    }
-    system.onmessage = function(data) {
-        alert(data)
+    function openApp() {
+          appRouter('oaps://mk/web?u=https%3A%2F%2Fcdofs.oppomobile.com%2Fcdo-activity%2F26866%2F8144e826440c8feafbc7e35fd27ac3ac.html%3FactId%3D26866%26region%3DCN%26at%3D1%26ta%3D0%26c%3D0')
     }
 </script>
 </html>
