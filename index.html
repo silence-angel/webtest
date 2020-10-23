@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
-    <header>
-        <p>这是个测试h5</p>
-    </header>
-    <div>
-        <input type="button" value="点击拉起应用" onclick="openApp()"></input>
-        <input type="button" value="点击拉起应用2" onclick="openApp2()"></input>
-    </div>
-</body>
-<script>
-    function openApp() {
-          window.location.href = 'breenovoice://speechassist.heytap.com/openpage?package_name=com.oppo.speechassist.virtual&type=webpage&url=https%3A%2F%2Fstatic-bot.nearme.com.cn%2Factivities%2Fcantaloupe%2Findex.html%3Fsource%3D605'
+    <style type="text/css">
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="background:cornflowerblue; width: 100%; height: 100%;" ></div>
+  </body>
+  <script type="text/javascript">
+    window.onmessage = function (data) {
+      console.log("message received: " + data);
     }
-    function openApp2() {
-          window.location.href = 'iot://ohome/limitedbridge?store_action&fact=4001&fpa=603&jump_link=https%3A%2F%2Fstore.oppo.com%2Fcn%2Fapp%2Fproduct%2Findex%3FskuId%3D798%26utm_source%3Dapp%26utm_medium%3Dshanpin'
-    }
-</script>
-<script type="text/javascript" src="//statres.quickapp.cn/quickapp/js/routerinline.min.js"></script>
+    window.postMessage(JSON.stringify({handler: 'getDeviceId'}));
+  </script>
+  <style></style>
 </html>
