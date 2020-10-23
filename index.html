@@ -43,7 +43,7 @@
         case "deviceInfo":
           document.querySelector(
             ".deviceInfo"
-          ).innerText = `deviceInfo: ${cache.deviceInfo}`;
+          ).innerText = `deviceInfo: ${JSON.stringify(cache.deviceInfo)}`;
           break;
       }
     };
