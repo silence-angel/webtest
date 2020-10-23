@@ -13,13 +13,14 @@
   </head>
 
   <body>
-    <div style="background:cornflowerblue; width: 100%; height: 300px;" >
+    <div style="background:cornflowerblue; width: 100%; height: 100%;" >
+      <p class="device">deviceId: </p>
       <input type="button" onclick="getDeviceId()" class="deviceId button" value="getDeviceId" />
     </div>
   </body>
   <script type="text/javascript">
     system.onmessage = function (data) {
-      console.log("message received: " + data)
+      alert("message received: " + data)
     }
     function getDeviceId() {
       window.system.postMessage(JSON.stringify({handler: 'getDeviceId'}))
