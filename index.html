@@ -41,6 +41,13 @@
         class="login button"
         value="toLogin"
       />
+      <p class="shortcutHasInstalled">shortcutHasInstalled:</p>
+      <input
+        type="button"
+        onclick="getShortcutHasInstalled()"
+        class="shortcutHasInstalled button"
+        value="getShortcutHasInstalled"
+      />
     </div>
   </body>
   <script type="text/javascript">
@@ -76,6 +83,12 @@
     }
     function toLogin() {
       window.system.postMessage(JSON.stringify({ handler: "toLogin" }));
+    }
+    function toLogin() {
+      window.system.postMessage(JSON.stringify({ handler: "toLogin" }));
+    }
+    function getShortcutHasInstalled() {
+      window.system.postMessage(JSON.stringify({ handler: "getShortcutHasInstalled" }));
     }
   </script>
   <style>
