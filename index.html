@@ -21,6 +21,12 @@
   <script type="text/javascript">
     system.onmessage = function (data) {
       alert("message received: " + data)
+      const cache = JSON.parse(data)
+      switch (cache.type) {
+        case 'deviceId':
+          document.querySelector('.device').innerText = `deviceId: ${cache.deviceId}` 
+          break
+      }
     }
     function getDeviceId() {
       window.system.postMessage(JSON.stringify({handler: 'getDeviceId'}))
@@ -31,7 +37,7 @@
       width: 100%; height: 100%;
     }
     .button{
-      width: 50px;
+      width: 200px;
       margin-bottom: 10px;
     }
   </style>
