@@ -35,6 +35,12 @@
         class="token button"
         value="getToken"
       />
+      <input
+        type="button"
+        onclick="toLogin()"
+        class="login button"
+        value="toLogin"
+      />
     </div>
   </body>
   <script type="text/javascript">
@@ -67,6 +73,9 @@
     }
     function getToken() {
       window.system.postMessage(JSON.stringify({ handler: "getToken" }));
+    }
+    function toLogin() {
+      window.system.postMessage(JSON.stringify({ handler: "toLogin" }));
     }
   </script>
   <style>
