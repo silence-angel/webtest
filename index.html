@@ -28,6 +28,13 @@
         class="deviceInfo button"
         value="getDeviceInfo"
       />
+      <p class="token">token:</p>
+      <input
+        type="button"
+        onclick="getToken()"
+        class="token button"
+        value="getToken"
+      />
     </div>
   </body>
   <script type="text/javascript">
@@ -45,6 +52,11 @@
             ".deviceInfo"
           ).innerText = `deviceInfo: ${JSON.stringify(cache.deviceInfo)}`;
           break;
+        case "token":
+          document.querySelector(
+            ".token"
+          ).innerText = `token: ${cache.token}`;
+          break;
       }
     };
     function getDeviceId() {
@@ -53,12 +65,18 @@
     function getDeviceInfo() {
       window.system.postMessage(JSON.stringify({ handler: "getDeviceInfo" }));
     }
+    function getToken() {
+      window.system.postMessage(JSON.stringify({ handler: "getToken" }));
+    }
   </script>
   <style>
     html,
     body {
       width: 100%;
       height: 100%;
+    }
+    p {
+      width: 100%;
     }
     .button {
       width: 200px;
