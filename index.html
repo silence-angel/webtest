@@ -54,12 +54,12 @@
         class="shortcutInstall button"
         value="toShortcutInstall"
       />
-      <p class="shortcutHasInstalled">shortcutHasInstalled:</p>
+      <p class="pkgHasInstalled">pkgHasInstalled:</p>
       <input
         type="button"
-        onclick="pkgHasInstalled()"
+        onclick="getPkgHasInstalled()"
         class="pkgHasInstalled button"
-        value="pkgHasInstalled"
+        value="getPkgHasInstalled"
       />
     </div>
   </body>
@@ -116,8 +116,8 @@
     function toShortcutInstall() {
       window.system.postMessage(JSON.stringify({ handler: "toShortcutInstall" }));
     }
-    function pkgHasInstalled() {
-      window.system.postMessage(JSON.stringify({ handler: "getPkgHasInstall", packageName: 'com.nearme.quickapp.center' }));
+    function getPkgHasInstalled() {
+      window.system.postMessage(JSON.stringify({ handler: "getPkgHasInstalled", packageName: 'com.nearme.quickapp.center' }));
     }
   </script>
   <style>
