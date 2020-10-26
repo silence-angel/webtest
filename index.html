@@ -68,11 +68,19 @@
         class="pkgInfo button"
         value="getPkgInfo"
       />
+      <p class="testList">test-list:</p>
+      <input
+        type="button"
+        onclick="getTestList()"
+        class="testList button"
+        value="getTestList"
+      />
     </div>
   </body>
   <script type="text/javascript">
+    const list = []
     system.onmessage = function (data) {
-      alert("message received: " + data);
+      // alert("message received: " + data);
       const cache = JSON.parse(data);
       switch (cache.type) {
         case "deviceId":
@@ -105,6 +113,15 @@
             ".pkgInfo"
           ).innerText = `pkgInfo: ${JSON.stringify(cache.pkgInfo)}`;
           break;
+        case "testList":
+          list.push(data.testItem)
+          if(list.length === 1000) {
+            document.querySelector(
+              ".testList"
+            ).innerText = `testList: all in`;
+          }
+          
+          break;
       }
     };
     function getDeviceId() {
@@ -132,7 +149,10 @@
       window.system.postMessage(JSON.stringify({ handler: "getPkgHasInstalled", packageName: 'com.nearme.quickapp.center' }));
     }
     function getPkgInfo() {
-      window.system.postMessage(JSON.stringify({ handler: "getPkgInfo", pkglist: ['com.nearme.quickapp.center' ]}));
+      window.system.postMessage(JSON.stringify({ handler: "getPkgInfo", pkglist: ['com.nearme.quickapp.center'] }));
+    }
+    function getTestList() {
+      window.system.postMessage(JSON.stringify({ handler: "getTestList" }));
     }
   </script>
   <style>
