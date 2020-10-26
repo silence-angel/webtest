@@ -132,7 +132,7 @@
       window.system.postMessage(JSON.stringify({ handler: "getPkgHasInstalled", packageName: 'com.nearme.quickapp.center' }));
     }
     function getPkgInfo() {
-      window.system.postMessage(JSON.stringify({ handler: "getPkgInfo", packageName: 'com.nearme.quickapp.center' }));
+      window.system.postMessage(JSON.stringify({ handler: "getPkgInfo", pkglist: ['com.nearme.quickapp.center' ]}));
     }
   </script>
   <style>
