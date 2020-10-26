@@ -54,6 +54,13 @@
         class="shortcutInstall button"
         value="toShortcutInstall"
       />
+      <p class="shortcutHasInstalled">shortcutHasInstalled:</p>
+      <input
+        type="button"
+        onclick="pkgHasInstalled()"
+        class="pkgHasInstalled button"
+        value="pkgHasInstalled"
+      />
     </div>
   </body>
   <script type="text/javascript">
@@ -81,6 +88,11 @@
             ".shortcutHasInstalled"
           ).innerText = `shortcutHasInstalled: ${cache.shortcutHasInstalled}`;
           break;
+        case "pkgHasInstalled":
+          document.querySelector(
+            ".pkgHasInstalled"
+          ).innerText = `pkgHasInstalled: ${cache.pkgHasInstalled}`;
+          break;
       }
     };
     function getDeviceId() {
@@ -103,6 +115,9 @@
     }
     function toShortcutInstall() {
       window.system.postMessage(JSON.stringify({ handler: "toShortcutInstall" }));
+    }
+    function pkgHasInstalled() {
+      window.system.postMessage(JSON.stringify({ handler: "getPkgHasInstall", packageName: 'com.nearme.quickapp.center' }));
     }
   </script>
   <style>
