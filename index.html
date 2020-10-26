@@ -91,7 +91,7 @@
         case "pkgHasInstalled":
           document.querySelector(
             ".pkgHasInstalled"
-          ).innerText = `pkgHasInstalled: ${cache.pkgHasInstalled}`;
+          ).innerText = `pkgHasInstalled: ${JSON.stringify(cache.pkgHasInstalled)}`;
           break;
       }
     };
