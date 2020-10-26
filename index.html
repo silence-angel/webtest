@@ -61,6 +61,13 @@
         class="pkgHasInstalled button"
         value="getPkgHasInstalled"
       />
+      <p class="pkgInfo">pkgInfo:</p>
+      <input
+        type="button"
+        onclick="getPkgInfo()"
+        class="pkgInfo button"
+        value="getPkgInfo"
+      />
     </div>
   </body>
   <script type="text/javascript">
@@ -93,6 +100,11 @@
             ".pkgHasInstalled"
           ).innerText = `pkgHasInstalled: ${JSON.stringify(cache.pkgHasInstalled)}`;
           break;
+        case "pkgInfo":
+          document.querySelector(
+            ".pkgInfo"
+          ).innerText = `pkgInfo: ${JSON.stringify(cache.pkgInfo)}`;
+          break;
       }
     };
     function getDeviceId() {
@@ -118,6 +130,9 @@
     }
     function getPkgHasInstalled() {
       window.system.postMessage(JSON.stringify({ handler: "getPkgHasInstalled", packageName: 'com.nearme.quickapp.center' }));
+    }
+    function getPkgInfo() {
+      window.system.postMessage(JSON.stringify({ handler: "getPkgInfo", packageName: 'com.nearme.quickapp.center' }));
     }
   </script>
   <style>
