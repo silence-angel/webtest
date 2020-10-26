@@ -48,6 +48,12 @@
         class="shortcutHasInstalled button"
         value="getShortcutHasInstalled"
       />
+      <input
+        type="button"
+        onclick="toShortcutInstall()"
+        class="shortcutInstall button"
+        value="toShortcutInstall"
+      />
     </div>
   </body>
   <script type="text/javascript">
@@ -94,6 +100,9 @@
     }
     function getShortcutHasInstalled() {
       window.system.postMessage(JSON.stringify({ handler: "getShortcutHasInstalled" }));
+    }
+    function toShortcutInstall() {
+      window.system.postMessage(JSON.stringify({ handler: "toShortcutInstall" }));
     }
   </script>
   <style>
