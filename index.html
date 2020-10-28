@@ -87,7 +87,7 @@
   <script type="text/javascript">
     const list = []
     system.onmessage = function (data) {
-      // alert("message received: " + data);
+      alert("message received: " + data);
       const cache = JSON.parse(data);
       switch (cache.type) {
         case "deviceId":
