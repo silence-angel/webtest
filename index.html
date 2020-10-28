@@ -78,7 +78,7 @@
       <p class="routerPush">router-push:</p>
       <input
         type="button"
-        onclick="getRouterPush()"
+        onclick="routerPush()"
         class="routerPush button"
         value="getRouterPush"
       />
@@ -165,7 +165,7 @@
     function getTestList() {
       window.system.postMessage(JSON.stringify({ handler: "getTestList" }));
     }
-    function getRouterPush() {
+    function routerPush() {
       window.system.postMessage(JSON.stringify({ handler: "routerPush", 
       data: {
         uri: '/Search',
