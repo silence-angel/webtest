@@ -75,6 +75,13 @@
         class="testList button"
         value="getTestList"
       />
+      <p class="routerPush">router-push:</p>
+      <input
+        type="button"
+        onclick="getRouterPush()"
+        class="routerPush button"
+        value="getRouterPush"
+      />
     </div>
   </body>
   <script type="text/javascript">
@@ -149,10 +156,22 @@
       window.system.postMessage(JSON.stringify({ handler: "getPkgHasInstalled", packageName: 'com.nearme.quickapp.center' }));
     }
     function getPkgInfo() {
-      window.system.postMessage(JSON.stringify({ handler: "getPkgInfo", pkglist: ['com.nearme.quickapp.center'] }));
+      window.system.postMessage(JSON.stringify({ handler: "getPkgInfo",
+      data: {
+        pkglist: ['com.nearme.quickapp.center']
+      }
+      }));
     }
     function getTestList() {
       window.system.postMessage(JSON.stringify({ handler: "getTestList" }));
+    }
+    function getRouterPush() {
+      window.system.postMessage(JSON.stringify({ handler: "getTestList", 
+      data: {
+        uri: '/Search',
+        params: { searchTaskFromActivity: true, actId: 5508 }
+      }
+       }));
     }
   </script>
   <style>
