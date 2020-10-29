@@ -93,12 +93,12 @@
         case "deviceId":
           document.querySelector(
             ".deviceId"
-          ).innerText = `deviceId: ${cache.deviceId}`;
+          ).innerText = `deviceId: ${cache.message.deviceId}`;
           break;
         case "deviceInfo":
           document.querySelector(
             ".deviceInfo"
-          ).innerText = `deviceInfo: ${JSON.stringify(cache.deviceInfo)}`;
+          ).innerText = `deviceInfo: ${JSON.stringify(cache.message.deviceInfo)}`;
           break;
         case "token":
           document.querySelector(
@@ -108,17 +108,17 @@
         case "shortcutHasInstalled":
           document.querySelector(
             ".shortcutHasInstalled"
-          ).innerText = `shortcutHasInstalled: ${cache.shortcutHasInstalled}`;
+          ).innerText = `shortcutHasInstalled: ${cache.message.shortcutHasInstalled}`;
           break;
         case "pkgHasInstalled":
           document.querySelector(
             ".pkgHasInstalled"
-          ).innerText = `pkgHasInstalled: ${JSON.stringify(cache.pkgHasInstalled)}`;
+          ).innerText = `pkgHasInstalled: ${JSON.stringify(cache.message.pkgHasInstalled)}`;
           break;
         case "pkgInfo":
           document.querySelector(
             ".pkgInfo"
-          ).innerText = `pkgInfo: ${JSON.stringify(cache.pkgInfo)}`;
+          ).innerText = `pkgInfo: ${JSON.stringify(cache.message.pkgInfo)}`;
           break;
         case "testList":
           list.push(data.testItem)
