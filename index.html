@@ -88,7 +88,7 @@
   <script type="text/javascript">
     var vConsole = new VConsole();
     console.log(window.system, 123)
-    const descriptor = Object.getOwnPropertyDescriptor(window.system.onmessage)
+    const descriptor = Object.getOwnPropertyDescriptor(window.system)
     console.log(descriptor)
     const list = []
     system.onmessage = function (data) {
