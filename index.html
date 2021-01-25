@@ -88,7 +88,7 @@
   <script type="text/javascript">
     var vConsole = new VConsole();
     console.log('window.system', window.system)
-    console.log(Object.getOwnPropertyDescriptor(window.system, 'onmessage'))
+    console.log('getOwnPropertyDescriptor', Object.getOwnPropertyDescriptor(window.system, 'onmessage'))
     try{
       Object.defineProperty(window.system, 'onmessage', {
         get: () => { console.log('get') },
