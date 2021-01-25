@@ -89,6 +89,16 @@
     var vConsole = new VConsole();
     console.log(window.system, 123)
     console.log(Object.getOwnPropertyDescriptor(window.system, 'onmessage'))
+    try{
+      Object.defineProperty(window.system, 'onmessage', {
+        get: () => { console.log(123) },
+        set: (val) => {
+          value = val || 111
+        }
+      })
+    }catch(err) {
+      console.log(err)
+    }
     const list = []
     system.onmessage = function (data) {
       alert("message received: " + data);
