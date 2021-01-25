@@ -87,17 +87,8 @@
   <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.3.4/vconsole.min.js"></script>
   <script type="text/javascript">
     var vConsole = new VConsole();
-    console.log('window')
-    try{
-      Object.defineProperty(window.system, 'onmessage', {
-        get: ()=> { console.log(123) },
-        set: (val) => {
-          window.val = val || 111
-        }
-      })
-    } catch(err){
-      console.log('err:', err)
-    }
+    const descriptor = Object.getOwnPropertyDescriptor(window.system.onmessage)
+    console.log(descriptor)
     console.log(window.system, 123)
     const list = []
     system.onmessage = function (data) {
