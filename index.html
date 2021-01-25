@@ -87,7 +87,7 @@
   <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.3.4/vconsole.min.js"></script>
   <script type="text/javascript">
     var vConsole = new VConsole();
-    Object.defineProperty(window.system, onmessage, {})
+    Object.defineProperty(window.system, 'message', {})
     console.log(window.system, 123)
     const list = []
     system.onmessage = function (data) {
