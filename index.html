@@ -84,8 +84,12 @@
       />
     </div>
   </body>
+  <script type="text/javascript" src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>
   <script type="text/javascript">
+    var vConsole = new VConsole();
+    console.log(window)
     Object.defineProperty(window.system, onmessage, {})
+    console.log(window)
     const list = []
     system.onmessage = function (data) {
       alert("message received: " + data);
