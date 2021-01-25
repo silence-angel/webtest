@@ -14,7 +14,7 @@
 
   <body>
     <div style="background: cornflowerblue; width: 100%; height: 100%">
-      <p class="deviceId">deviceId:</p>
+<!--       <p class="deviceId">deviceId:</p>
       <input
         type="button"
         onclick="getDeviceId()"
@@ -81,7 +81,8 @@
         onclick="routerPush()"
         class="routerPush button"
         value="getRouterPush"
-      />
+      /> -->
+      <div>123321</div>
     </div>
   </body>
   <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.3.4/vconsole.min.js"></script>
@@ -100,94 +101,97 @@
     }catch(err) {
       console.log('err', err)
     }
+    system.onmessage = (msg) => {
+      console.log(msg)
+    }
     const list = []
-    system.onmessage = function (data) {
-      alert("message received: " + data);
-      const cache = JSON.parse(data);
-      switch (cache.type) {
-        case "deviceId":
-          document.querySelector(
-            ".deviceId"
-          ).innerText = `deviceId: ${cache.message.deviceId}`;
-          break;
-        case "deviceInfo":
-          document.querySelector(
-            ".deviceInfo"
-          ).innerText = `deviceInfo: ${JSON.stringify(cache.message.deviceInfo)}`;
-          break;
-        case "token":
-          document.querySelector(
-            ".token"
-          ).innerText = `token: ${cache.token}`;
-          break;
-        case "shortcutHasInstalled":
-          document.querySelector(
-            ".shortcutHasInstalled"
-          ).innerText = `shortcutHasInstalled: ${cache.message.shortcutHasInstalled}`;
-          break;
-        case "pkgHasInstalled":
-          document.querySelector(
-            ".pkgHasInstalled"
-          ).innerText = `pkgHasInstalled: ${JSON.stringify(cache.message.pkgHasInstalled)}`;
-          break;
-        case "pkgInfo":
-          document.querySelector(
-            ".pkgInfo"
-          ).innerText = `pkgInfo: ${JSON.stringify(cache.message.pkgInfo)}`;
-          break;
-        case "testList":
-          list.push(data.testItem)
-          if(list.length === 1000) {
-            document.querySelector(
-              ".testList"
-            ).innerText = `testList: all in`;
-          }
+//     system.onmessage = function (data) {
+//       alert("message received: " + data);
+//       const cache = JSON.parse(data);
+//       switch (cache.type) {
+//         case "deviceId":
+//           document.querySelector(
+//             ".deviceId"
+//           ).innerText = `deviceId: ${cache.message.deviceId}`;
+//           break;
+//         case "deviceInfo":
+//           document.querySelector(
+//             ".deviceInfo"
+//           ).innerText = `deviceInfo: ${JSON.stringify(cache.message.deviceInfo)}`;
+//           break;
+//         case "token":
+//           document.querySelector(
+//             ".token"
+//           ).innerText = `token: ${cache.token}`;
+//           break;
+//         case "shortcutHasInstalled":
+//           document.querySelector(
+//             ".shortcutHasInstalled"
+//           ).innerText = `shortcutHasInstalled: ${cache.message.shortcutHasInstalled}`;
+//           break;
+//         case "pkgHasInstalled":
+//           document.querySelector(
+//             ".pkgHasInstalled"
+//           ).innerText = `pkgHasInstalled: ${JSON.stringify(cache.message.pkgHasInstalled)}`;
+//           break;
+//         case "pkgInfo":
+//           document.querySelector(
+//             ".pkgInfo"
+//           ).innerText = `pkgInfo: ${JSON.stringify(cache.message.pkgInfo)}`;
+//           break;
+//         case "testList":
+//           list.push(data.testItem)
+//           if(list.length === 1000) {
+//             document.querySelector(
+//               ".testList"
+//             ).innerText = `testList: all in`;
+//           }
           
-          break;
-      }
-    };
-    function getDeviceId() {
-      window.system.postMessage(JSON.stringify({ handler: "getDeviceId" }));
-    }
-    function getDeviceInfo() {
-      window.system.postMessage(JSON.stringify({ handler: "getDeviceInfo" }));
-    }
-    function getToken() {
-      window.system.postMessage(JSON.stringify({ handler: "getToken" }));
-    }
-    function toLogin() {
-      window.system.postMessage(JSON.stringify({ handler: "toLogin" }));
-    }
-    function toLogin() {
-      window.system.postMessage(JSON.stringify({ handler: "toLogin" }));
-    }
-    function getShortcutHasInstalled() {
-      window.system.postMessage(JSON.stringify({ handler: "getShortcutHasInstalled" }));
-    }
-    function toShortcutInstall() {
-      window.system.postMessage(JSON.stringify({ handler: "toShortcutInstall" }));
-    }
-    function getPkgHasInstalled() {
-      window.system.postMessage(JSON.stringify({ handler: "getPkgHasInstalled", packageName: 'com.nearme.quickapp.center' }));
-    }
-    function getPkgInfo() {
-      window.system.postMessage(JSON.stringify({ handler: "getPkgInfo",
-      data: {
-        pkglist: ['com.nearme.quickapp.center']
-      }
-      }));
-    }
-    function getTestList() {
-      window.system.postMessage(JSON.stringify({ handler: "getTestList" }));
-    }
-    function routerPush() {
-      window.system.postMessage(JSON.stringify({ handler: "routerPush", 
-      data: {
-        uri: '/pages/Search',
-        params: { source: 'activity', actId: 5508 }
-      }
-       }));
-    }
+//           break;
+//       }
+//     };
+//     function getDeviceId() {
+//       window.system.postMessage(JSON.stringify({ handler: "getDeviceId" }));
+//     }
+//     function getDeviceInfo() {
+//       window.system.postMessage(JSON.stringify({ handler: "getDeviceInfo" }));
+//     }
+//     function getToken() {
+//       window.system.postMessage(JSON.stringify({ handler: "getToken" }));
+//     }
+//     function toLogin() {
+//       window.system.postMessage(JSON.stringify({ handler: "toLogin" }));
+//     }
+//     function toLogin() {
+//       window.system.postMessage(JSON.stringify({ handler: "toLogin" }));
+//     }
+//     function getShortcutHasInstalled() {
+//       window.system.postMessage(JSON.stringify({ handler: "getShortcutHasInstalled" }));
+//     }
+//     function toShortcutInstall() {
+//       window.system.postMessage(JSON.stringify({ handler: "toShortcutInstall" }));
+//     }
+//     function getPkgHasInstalled() {
+//       window.system.postMessage(JSON.stringify({ handler: "getPkgHasInstalled", packageName: 'com.nearme.quickapp.center' }));
+//     }
+//     function getPkgInfo() {
+//       window.system.postMessage(JSON.stringify({ handler: "getPkgInfo",
+//       data: {
+//         pkglist: ['com.nearme.quickapp.center']
+//       }
+//       }));
+//     }
+//     function getTestList() {
+//       window.system.postMessage(JSON.stringify({ handler: "getTestList" }));
+//     }
+//     function routerPush() {
+//       window.system.postMessage(JSON.stringify({ handler: "routerPush", 
+//       data: {
+//         uri: '/pages/Search',
+//         params: { source: 'activity', actId: 5508 }
+//       }
+//        }));
+//     }
   </script>
   <style>
     html,
