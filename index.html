@@ -87,7 +87,8 @@
   <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.3.4/vconsole.min.js"></script>
   <script type="text/javascript">
     var vConsole = new VConsole();
-    console.log(window.system, 123)
+    const a = JSON.stringify(window.system)
+    console.log(JSON.parse(a), 123321)
     Object.defineProperty(window.system, onmessage, {})
     console.log(window.system, 123)
     const list = []
