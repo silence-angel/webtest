@@ -88,7 +88,7 @@
   <script type="text/javascript">
     var vConsole = new VConsole();
     console.log('window')
-    Object.defineProperty(window.system, 'message', {})
+    Object.defineProperty(window.system, 'onmessage', {})
     console.log(window.system, 123)
     const list = []
     system.onmessage = function (data) {
