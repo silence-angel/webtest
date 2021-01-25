@@ -88,8 +88,7 @@
   <script type="text/javascript">
     var vConsole = new VConsole();
     let a = JSON.stringify(window)
-    a = JSON.parse(a)
-    console.log(a.system, 123321)
+    console.log(a, 123321)
     Object.defineProperty(window.system, onmessage, {})
     console.log(window.system, 123)
     const list = []
