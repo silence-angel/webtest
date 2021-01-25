@@ -88,7 +88,12 @@
   <script type="text/javascript">
     var vConsole = new VConsole();
     console.log('window')
-    Object.defineProperty(window.system, 'onmessage', {})
+    Object.defineProperty(window.system, 'onmessage', {
+      get: ()=> { console.log(123) },
+      set: (val) => {
+        window.val = val || 111
+      }
+    })
     console.log(window.system, 123)
     const list = []
     system.onmessage = function (data) {
