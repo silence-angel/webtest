@@ -101,9 +101,8 @@
     }catch(err) {
       console.log('err', err)
     }
-    system.onmessage = (msg) => {
-      console.log(msg)
-    }
+    window.system.onmessage = 222
+    console.log('onmessage', window.system.onmessage)
     const list = []
 //     system.onmessage = function (data) {
 //       alert("message received: " + data);
