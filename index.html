@@ -94,7 +94,7 @@
       Object.defineProperty(window.system, 'onmessage', {
         get: () => { 
           console.log('get', value) 
-          return value
+          return value+'haha'
         },
         set: (val) => {
           console.log('set')
