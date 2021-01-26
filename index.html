@@ -92,7 +92,10 @@
     console.log('getOwnPropertyDescriptor', Object.getOwnPropertyDescriptor(window.system, 'onmessage'))
     try{
       Object.defineProperty(window.system, 'onmessage', {
-        get: () => { console.log('get') },
+        get: () => { 
+          console.log('get', value) 
+          return value
+        },
         set: (val) => {
           console.log('set')
           value = val || 111
@@ -103,7 +106,7 @@
     }
     window.system.onmessage = 222
     console.log('onmessage', window.system.onmessage)
-    const list = []
+//     const list = []
 //     system.onmessage = function (data) {
 //       alert("message received: " + data);
 //       const cache = JSON.parse(data);
